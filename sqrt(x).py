@@ -20,3 +20,19 @@ Explanation: The square root of 8 is 2.82842..., and since we round it down to t
 Constraints:
 
 0 <= x <= 231 - 1'''
+def mySqrt(self, x):
+      """
+      :type x: int
+      :rtype: int
+      """
+      l=0
+      r=x
+      while l<=r:
+          m=(l+r)//2
+          if m*m<x:
+              l=m+1
+          elif m*m>x:
+              r=m-1
+          else:
+              return m
+      return r
