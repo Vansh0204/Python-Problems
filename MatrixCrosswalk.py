@@ -27,3 +27,17 @@ Output
 
 Explanation
 We can see that the sum of the middle row 4 5 6 and middle column 2 5 8 is (4 + 5 + 6) + (2 + 5 + 8)  - 5 = 25.'''
+
+N=int(input())
+mat=[]
+s=0
+for i in range(N):
+    arr=list(map(int,input().split()))
+    mat.append(arr)
+
+for j in range(N):
+    s+=mat[j][N//2]
+
+for j in range(N):
+    s+=mat[N//2][j]
+print(s-mat[N//2][N//2])
