@@ -21,3 +21,16 @@ Input: s = "00111"
 Output: 5
 Explanation: When left = "00" and right = "111", we get the maximum score = 2 + 3 = 5
 '''
+def maxScore(s):
+    t = s.count('1')
+    m = 0
+    l = 0
+    os = 0
+    for i in range(len(s) - 1):
+        if s[i] == '0':
+            l += 1
+        else:
+            os += 1
+        r = t - os
+        m = max(m, l + r)
+    return m
