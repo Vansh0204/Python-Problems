@@ -25,3 +25,18 @@ Output
 Explanation
 Subarray from index 3 to 7 is the subarray with minimum possible length whose subarray sum is greater than or equal to 19.
 5+5+3+1+5=19'''
+def minSubArray(arr, k):
+    n = len(arr)
+    left = 0
+    sum_window = 0
+    min_length = float('inf')
+
+    for right in range(n):
+        sum_window += arr[right]  
+
+        while sum_window >= k: 
+            min_length = min(min_length, right - left + 1)
+            sum_window -= arr[left]
+            left += 1
+
+    return min_length if min_length != float('inf') else 0
