@@ -45,4 +45,15 @@ def sumOddLengthSubarrays(arr):
                 for j in range(len(subarrays[i])):
                     s+=subarrays[i][j]
         return s
-        
+
+# MORE OPTIMISED SOLUTION
+
+def sumOddLengthSubarrays(arr):
+    n = len(arr)
+    total_sum = 0
+
+    for i in range(n):
+        count = ((i + 1) * (n - i) + 1) // 2  
+        total_sum += arr[i] * count 
+
+    return total_sum
