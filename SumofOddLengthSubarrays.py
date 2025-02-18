@@ -32,3 +32,17 @@ The odd- length subarrays of A and their sums are:
 [2, 5, 3] = 10
 [1, 4, 2, 5, 3] = 15
 If we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 = 58'''
+
+def sumOddLengthSubarrays(arr):
+        n = len(arr)
+        subarrays = []
+        s=0
+        for i in range(n):
+            for j in range(i, n):
+                subarrays.append(arr[i:j+1])
+        for i in range(len(subarrays)):
+            if len(subarrays[i])%2!=0:
+                for j in range(len(subarrays[i])):
+                    s+=subarrays[i][j]
+        return s
+        
