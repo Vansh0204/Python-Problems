@@ -15,3 +15,9 @@ Example 2:
 Input: gain = [-4,-3,-2,-1,4,3,2]
 Output: 0
 Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.'''
+def largestAltitude(gain):
+    a, m = 0, 0
+    for g in gain:
+        a += g
+        m = max(m, a)
+    return m
