@@ -18,3 +18,9 @@ Example 3:
 
 Input: nums = [3,1,2,10,1]
 Output: [3,4,6,16,17]'''
+def runningSum(nums):
+    prefix_sum = [0]*len(nums)
+    prefix_sum[0] = nums[0]
+    for i in range(1,len(nums)):
+        prefix_sum[i] = prefix_sum[i-1]+nums[i]
+    return prefix_sum
