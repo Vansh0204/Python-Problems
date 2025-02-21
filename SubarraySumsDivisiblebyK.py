@@ -15,3 +15,16 @@ Example 2:
 Input: nums = [5], k = 9
 Output: 0
 '''
+a,k=map(int,input().split())  
+nums=list(map(int,input().split()))  
+r=[0]*k  
+r[0]=1  
+c=i=0  
+for n in nums:  
+    c+=n  
+    x=c%k  
+    if x<0:  
+        x+=k  
+    i+=r[x]  
+    r[x]+=1  
+print(i)
