@@ -19,3 +19,28 @@ Example 2:
 Input: nums = [2,3,4,5], queries = [1]
 Output: [0]
 Explanation: The empty subsequence is the only subsequence that has a sum less than or equal to 1, so answer[0] = 0.'''
+
+def answerQueries(nums, queries):
+    nums.sort()
+    prefix_sums = [0]  
+    
+    for num in nums:
+        prefix_sums.append(prefix_sums[-1] + num)
+
+    def binary_search(target):
+
+        left, right = 0, len(prefix_sums) - 1
+        while left <= right:
+            mid = (left + right) // 2
+            if prefix_sums[mid] <= target:
+                left = mid + 1 
+            else:
+                right = mid - 1 
+        return right
+
+    result = []
+    
+    for q in queries:
+        result.append(binary_search(q))
+    
+    return result
