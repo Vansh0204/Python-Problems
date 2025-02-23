@@ -19,3 +19,14 @@ Example 3:
 Input: letters = ["x","x","y","y"], target = "z"
 Output: "x"
 Explanation: There are no characters in letters that is lexicographically greater than 'z' so we return letters[0].'''
+def nextGreatestLetter(letters, target):
+        """
+        :type letters: List[str]
+        :type target: str
+        :rtype: str
+        """
+            
+        for letter in letters:
+            if letter > target:
+                return letter
+        return letters[0]
