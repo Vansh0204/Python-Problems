@@ -20,3 +20,11 @@ Output:
 Explanation:
 The input integer n is 5. We need to calculate the factorial of 5.
 Factorial of 5 = 5 * 4 * 3 * 2 * 1 = 120'''
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+n = int(input().strip())
+print(factorial(n))
