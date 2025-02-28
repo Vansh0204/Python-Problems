@@ -21,3 +21,14 @@ Example 3:
 Input: n = 4
 Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.'''
+
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+n = int(input())
+print(fibonacci(n))
