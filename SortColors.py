@@ -15,3 +15,14 @@ Example 2:
 Input: nums = [2,0,1]
 Output: [0,1,2]
 '''
+
+    def sortColors(nums):
+        l=[0]*3
+        for num in nums:
+            l[num] += 1
+        c=0
+        for x,y in enumerate(l):
+            for i in range(y):
+                nums[c]=x
+                c+=1
+        
