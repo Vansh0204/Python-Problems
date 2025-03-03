@@ -28,3 +28,12 @@ Output:
 1 3 4 7 9
 1 2 3 4 5 6 7 8 9 10
 '''
+def insertion_sort(seq):
+    for i in range(1, len(seq)):
+        key = seq[i]
+        j = i - 1
+        while j >= 0 and key < seq[j]:
+            seq[j + 1] = seq[j]
+            j -= 1
+        seq[j + 1] = key
+    return seq
