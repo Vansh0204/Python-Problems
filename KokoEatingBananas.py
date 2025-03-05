@@ -12,3 +12,21 @@ Example 1:
 
 Input: piles = [3,6,7,11], h = 8
 Output: 4'''
+import math
+
+def minEatingSpeed(piles, h):
+    left, right = 1, max(piles)
+
+    while left < right:
+        mid = (left + right) // 2
+        if canFinish(piles, h, mid):
+            right = mid
+        else:
+            left = mid + 1
+
+    return left
+
+def canFinish(piles, h, k):
+    total_hours = sum(math.ceil(pile / k) for pile in piles)
+    return total_hours <= h
+
