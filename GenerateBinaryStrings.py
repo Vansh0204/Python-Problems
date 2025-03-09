@@ -29,3 +29,7 @@ Output
 110
 111
 '''
+N = int(input())
+
+for i in range(2**N):
+    print(format(i, '0' + str(N) + 'b'))
