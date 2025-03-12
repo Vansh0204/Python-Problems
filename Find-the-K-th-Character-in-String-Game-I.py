@@ -32,3 +32,8 @@ Input: k = 10
 
 Output: "c"
 '''
+def kthCharacter(k):
+    word = "a"
+    while len(word) <= k:
+        word += "".join(chr(ord(c) + 1) if c != 'z' else 'a' for c in word)
+    return word[k - 1]
