@@ -10,7 +10,6 @@ For example, performing the operation on "c" generates "cd" and performing the o
 Return the value of the kth character in word, after enough operations have been done for word to have at least k characters.
 
 Note that the character 'z' can be changed to 'a' in the operation.
-
  
 
 Example 1:
